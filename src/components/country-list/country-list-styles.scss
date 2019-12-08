@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.country-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+
+    .country-item {
+        width: 22%;
+        max-width: 300px;
+        margin: 20px;
+    }
+}
