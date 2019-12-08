@@ -1,0 +1,30 @@
+/**************
+COLORS
+**************/
+
+$dark-blue: hsl(209, 23%, 22%); // (Dark Mode Elements)
+$very-dark-blue: hsl(207, 26%, 17%); // (Dark Mode Background)
+$very-dark-blue2: hsl(200, 15%, 8%); // (Light Mode Text)
+$dark-gray: hsl(0, 0%, 52%); // (Light Mode Input)
+$very-light-gray: hsl(0, 0%, 98%); // (Light Mode Background)
+$white: hsl(0, 0%, 100%); // (Dark Mode Text & Light Mode Elements)
+
+/**************
+TYPOGRAPHY
+**************/
+$body-default: 14px;
+$body-details: 16px;
+$header-title: 20px;
+
+// Fonts
+$font-family: 'Nunito Sans', sans-serif;
+
+/**************
+SHARED
+**************/
+@mixin box-shadow {
+    border-radius: 5px;
+    box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
+}

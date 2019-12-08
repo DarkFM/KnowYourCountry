@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+.App {
+    background-color: $very-light-gray;
+    font-size: $body-default;
+    color: $very-dark-blue2;
+    font-family: $font-family;
+    font-weight: 300;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}

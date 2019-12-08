@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+    font-weight: 600;
+
+    @include box-shadow;
+
+    .title {
+        font-size: $header-title;
+        margin: 0;
+    }
+
+    .theme-switch {
+        font-size: $body-details;
+    }
+}
