@@ -1,0 +1,32 @@
+@import '../../variables.scss';
+
+.search-bar {
+    $color: rgba(0, 0, 0, 0.5);
+    @include box-shadow;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    min-width: 400px;
+    color: $very-light-gray;
+    overflow: hidden;
+
+    i.fas {
+        color: $color;
+        width: 30%;
+        position: absolute;
+        left: 20px;
+    }
+
+    input[type='search'] {
+        font-size: $body-default;
+        width: 100%;
+        padding-left: 60px;
+        border: none;
+        height: 100%;
+
+        &::placeholder {
+            color: $color;
+        }
+    }
+}
