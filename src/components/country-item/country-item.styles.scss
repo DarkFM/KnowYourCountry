@@ -1,0 +1,46 @@
+@import '../../variables.scss';
+
+.country-item {
+    @include box-shadow;
+    background-color: $white;
+
+    min-width: 250px;
+    height: 350px;
+    display: inline-block;
+
+    .img-container {
+        height: 45%;
+        background-color: #45ac11;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .details {
+        padding: 20px 30px;
+
+        header {
+            font-weight: 800;
+            font-size: $header-title;
+            margin-top: 10px;
+        }
+
+        .country-detail {
+            margin: 8px auto;
+
+            &:first-of-type {
+                margin-top: 12px;
+            }
+
+            .detail-title {
+                font-weight: 600;
+            }
+
+            .detail-description {
+                margin-left: 3px;
+            }
+        }
+    }
+}
