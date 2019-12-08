@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+@mixin same-styles {
+    font-size: $body-details;
+    padding: 20px 25px;
+    color: $very-dark-blue2;
+    background-color: $white;
+}
+
+.dropdown {
+    display: inline-block;
+    width: 230px;
+    position: relative;
+
+    .toggle-list {
+        @include same-styles;
+        @include box-shadow;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .dropdown-items {
+        @include same-styles;
+        @include box-shadow;
+
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        margin: 0;
+
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .dropdown-item {
+            margin: 5px auto;
+            cursor: pointer;
+        }
+    }
+}
