@@ -13,7 +13,7 @@ export class CountryItem extends React.Component {
 
     formatNumber = num => {
         if (num < 0) return null;
-        if (num == 0) return 0;
+        if (num === 0) return 0;
 
         const hundreds = (num % 1000).toString();
         const rest = Math.trunc(num / 1000);
@@ -27,8 +27,9 @@ export class CountryItem extends React.Component {
         const formattedNumber = this.formatNumber(population);
         return (
             <div className="country-item">
+                {/* <div className="img-container" style={{ backgroundImage: `url(${flagImg})` }}> */}
                 <div className="img-container">
-                    <img src={flagImg} />
+                    <img src={flagImg} alt={countryName} />
                 </div>
                 <div className="details">
                     <header>{countryName}</header>

@@ -2,12 +2,13 @@
 
 .country-list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-flow: row wrap;
+    padding: 0 100px;
 
     .country-item {
-        width: 22%;
         max-width: 300px;
-        margin: 20px;
+        flex: 0 1 25%;
+        margin: 20px 35px;
     }
 }
