@@ -3,6 +3,7 @@
 .country-item {
     @include box-shadow;
     background-color: $white;
+    cursor: pointer;
 
     min-width: 250px;
     // width: 300px;

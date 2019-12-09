@@ -1,4 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+import { formatNumberWithCommas } from '../../utils/utils';
 
 import './country-item.styles.scss';
 
@@ -11,20 +14,13 @@ export class CountryItem extends React.Component {
         flagImg: 'sdsd'
     };
 
-    formatNumber = num => {
-        if (num === 0) return '';
-        return [...num.toString()].reverse().reduce((acc, n, idx) => {
-            if (idx % 3 === 0 && idx !== 0) return n + ',' + acc;
-            else return n + acc;
-        });
-    };
-
     render() {
-        const { countryName, population, capital, region, flagImg } = this.props;
-        const formattedNumber = this.formatNumber(population);
+        const { id, countryName, population, capital, region, flagImg, history } = this.props;
+        const formattedNumber = formatNumberWithCommas(population);
         const NO_INFO = 'Unknown';
+
         return (
-            <div className="country-item">
+            <div className="country-item" onClick={() => history.push(`/country/${id}`)}>
                 {/* <div className="img-container" style={{ backgroundImage: `url(${flagImg})` }}> */}
                 <div className="img-container">
                     <img src={flagImg} alt={countryName} />
@@ -49,4 +45,4 @@ export class CountryItem extends React.Component {
     }
 }
 
-export default CountryItem;
+export default withRouter(CountryItem);

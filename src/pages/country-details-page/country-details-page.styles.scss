@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.country-detail-page {
+    padding: 80px $page-padding-sides;
+
+    .go-back {
+        @include box-shadow;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 40px;
+        text-align: center;
+        border: 2px solid rgba(0, 0, 0, 0.05);
+        min-width: 100px;
+        font-weight: 300;
+        font-size: $body-details;
+        background-color: $very-light-gray;
+    }
+
+    .country-details {
+        margin-top: 40px;
+    }
+}

@@ -1,17 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.scss';
+
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
+import CountryDetailsPage from './pages/country-details-page/country-details-page.component';
 
 class App extends React.Component {
-    componentDidMount() {}
-
     render() {
         return (
             <div className="App">
                 <Header />
-                <HomePage />
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/country/:countryId" component={CountryDetailsPage} />
+                </Switch>
             </div>
         );
     }
