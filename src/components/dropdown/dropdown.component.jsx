@@ -12,11 +12,12 @@ class Dropdown extends React.Component {
         this.setState(state => ({ showItems: !state.showItems }));
     };
 
-    handleSelect = ({
-        target: {
-            dataset: { value }
-        }
-    }) => {
+    handleSelect = event => {
+        const {
+            target: {
+                dataset: { value }
+            }
+        } = event;
         this.setState({ selectedItem: value });
         this.toggleDropdown();
         // call another function passed by parent

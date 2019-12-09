@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+
+.homepage {
+    margin-top: 50px;
+    padding: 0 100px;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+    }
+}

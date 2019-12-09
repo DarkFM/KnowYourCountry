@@ -4,11 +4,11 @@
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
-    padding: 0 100px;
+    // padding: 0 100px;
 
     .country-item {
         max-width: 300px;
         flex: 0 1 25%;
-        margin: 20px 35px;
+        margin: 20px 0px;
     }
 }

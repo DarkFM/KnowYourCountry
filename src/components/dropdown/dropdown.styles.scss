@@ -16,6 +16,7 @@
         @include same-styles;
         @include box-shadow;
 
+        height: $menu-item-height;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -26,6 +27,7 @@
         @include same-styles;
         @include box-shadow;
 
+        z-index: 1;
         position: absolute;
         width: 100%;
         list-style: none;

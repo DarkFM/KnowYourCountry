@@ -28,11 +28,13 @@
 
     .details {
         padding: 20px 30px;
+        height: 55%;
 
         header {
             font-weight: 800;
             font-size: $header-title;
             margin-top: 10px;
+            height: 30%;
         }
 
         .country-detail {
