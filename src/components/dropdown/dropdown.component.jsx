@@ -23,6 +23,13 @@ class Dropdown extends React.Component {
         // call another function passed by parent
     };
 
+    componentDidUpdate(prevProps, prevState) {
+        const selectedItem = this.state.selectedItem;
+        if (prevState.selectedItem !== selectedItem) {
+            this.props.getSelectedItem(selectedItem);
+        }
+    }
+
     render() {
         const { showItems, selectedItem } = this.state;
 
@@ -34,24 +41,16 @@ class Dropdown extends React.Component {
                 </div>
                 {showItems && (
                     <ul className="dropdown-items">
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="All Regions">
-                            All Regions
-                        </li>
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="Africa">
-                            Africa
-                        </li>
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="America">
-                            America
-                        </li>
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="Asia">
-                            Asia
-                        </li>
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="Eurpoe">
-                            Eurpoe
-                        </li>
-                        <li onClick={this.handleSelect} className="dropdown-item" data-value="Oceania">
-                            Oceania
-                        </li>
+                        {this.props.dropdownItems.map(region => (
+                            <li
+                                key={region}
+                                onClick={this.handleSelect}
+                                className="dropdown-item"
+                                data-value={region}
+                            >
+                                {region}
+                            </li>
+                        ))}
                     </ul>
                 )}
             </div>

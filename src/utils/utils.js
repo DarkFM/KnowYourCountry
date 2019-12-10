@@ -30,3 +30,13 @@ export const formatNumberWithCommas = num => {
         else return n + acc;
     });
 };
+
+// https://stackoverflow.com/a/6969486/7771568
+export const escapeRegExp = string => {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+};
+
+export const getAllRegions = countries => {
+    const set = Object.keys(countries).reduce((set, key) => set.add(countries[key].region), new Set());
+    return [...set];
+};
