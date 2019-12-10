@@ -22,6 +22,10 @@ $font-family: 'Nunito Sans', sans-serif;
 /**************
 SHARED
 **************/
+$menu-item-height: 60px;
+$max-page-width: 1440px;
+$page-padding-sides: 100px;
+
 @mixin box-shadow {
     border-radius: 7px;
     box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
@@ -29,6 +33,8 @@ SHARED
     -moz-box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
 }
 
-$menu-item-height: 60px;
-
-$page-padding-sides: 50px;
+@mixin contain-page {
+    max-width: $max-page-width;
+    padding-left: $page-padding-sides;
+    padding-right: $page-padding-sides;
+}

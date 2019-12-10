@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter, Route, Switch } from 'react-router-dom';
 
 import { getSessionDataAsync, SESSION_KEY } from '../../utils/utils';
 

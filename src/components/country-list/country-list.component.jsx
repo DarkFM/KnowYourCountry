@@ -7,10 +7,15 @@ import CountryItem from '../country-item/country-item.component';
 import { getSessionDataAsync, SESSION_KEY } from '../../utils/utils';
 
 export class CountryList extends React.Component {
-    state = {
-        countries: {},
-        isLoading: false
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            countries: {},
+            isLoading: false,
+            searchQuery: this.props.searchQuery
+        };
+    }
 
     async componentDidMount() {
         this.setState({ isLoading: true });
@@ -20,12 +25,27 @@ export class CountryList extends React.Component {
         );
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        const newQuery = this.props.searchQuery;
+        if (prevProps.searchQuery !== newQuery) {
+            this.setState({ searchQuery: newQuery });
+        }
+    }
+
     render() {
         const { countries } = this.state;
-        const countriesArray = Object.keys(countries);
+        const countriesKeys = Object.keys(countries);
+
+        // filter countries based on the search query
+        const filteredCountries = countriesKeys.filter(countryId => {
+            const country = countries[countryId];
+            const re = new RegExp(this.props.searchQuery, 'gi');
+            return re.test(country.name);
+        });
+
         return (
             <div className="country-list">
-                {countriesArray.map(countryId => {
+                {filteredCountries.map(countryId => {
                     const country = countries[countryId];
                     return (
                         <CountryItem

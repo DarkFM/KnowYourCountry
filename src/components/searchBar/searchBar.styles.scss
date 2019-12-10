@@ -10,7 +10,6 @@
     min-width: 400px;
     color: $very-light-gray;
     overflow: hidden;
-    outline: none;
 
     i.fas {
         color: $color;
@@ -29,9 +28,16 @@
         padding-left: 60px;
         border: none;
         height: 100%;
+        transition: outline 0.3s ease;
+        outline: rgba(0, 0, 0, 0) solid 2px;
 
         &::placeholder {
             color: $color;
+        }
+
+        &:active,
+        &:focus {
+            outline: rgba(100, 100, 0, 0.2) solid 2px;
         }
     }
 }

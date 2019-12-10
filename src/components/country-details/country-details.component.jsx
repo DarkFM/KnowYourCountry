@@ -1,14 +1,10 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
-import { formatNumberWithCommas, getSessionDataAsync, SESSION_KEY } from '../../utils/utils';
+import { formatNumberWithCommas } from '../../utils/utils';
 import './country-details.styles.scss';
 
 class CountryDetail extends React.Component {
-    handleClick = countryId => {
-        this.props.history.push(`/country/${countryId}`);
-    };
-
     render() {
         const {
             name,
@@ -31,7 +27,7 @@ class CountryDetail extends React.Component {
         return (
             <div className="country-details">
                 <div className="country-img">
-                    <img src={flag} />
+                    <img src={flag} alt={`flag of ${name}`} />
                 </div>
                 <div className="details-container">
                     <header>{name}</header>
@@ -78,13 +74,14 @@ class CountryDetail extends React.Component {
                         <div className="tag-container">
                             {borders.length > 0 &&
                                 borders.map(country => (
-                                    <span
+                                    <Link
+                                        to={`/country/${country.code}`}
                                         key={country.code}
                                         className="tag"
-                                        onClick={() => this.handleClick(country.code)}
+                                        // onClick={() => this.handleClick(country.code)}
                                     >
                                         {country.name}
-                                    </span>
+                                    </Link>
                                 ))}
                         </div>
                     </div>

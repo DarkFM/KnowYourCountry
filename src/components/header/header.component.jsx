@@ -4,8 +4,10 @@ import './header.styles.scss';
 
 const Header = () => (
     <header className="header">
-        <h3 className="title">Where in the world?</h3>
-        <span className="theme-switch">Dark Mode</span>
+        <div className="container">
+            <h3 className="title">Where in the world?</h3>
+            <span className="theme-switch">Dark Mode</span>
+        </div>
     </header>
 );
 

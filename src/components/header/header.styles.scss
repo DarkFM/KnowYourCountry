@@ -2,20 +2,29 @@
 
 .header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px $page-padding-sides;
-    font-weight: 600;
 
+    padding: 25px 0;
+    font-weight: 600;
     @include box-shadow;
 
-    .title {
-        font-size: $header-title;
-        margin: 0;
-    }
+    .container {
+        @include contain-page;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        // min-width: 80%;
 
-    .theme-switch {
-        font-size: $body-details;
+        @media (max-width: $max-page-width) {
+        }
+
+        .title {
+            font-size: $header-title;
+            margin: 0;
+        }
+
+        .theme-switch {
+            font-size: $body-details;
+        }
     }
 }
