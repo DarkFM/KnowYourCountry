@@ -4,7 +4,7 @@ import './header.styles.scss';
 
 class Header extends React.Component {
     state = {
-        lightMode: false
+        lightMode: true
     };
 
     toggleTheme = () => {
@@ -14,9 +14,9 @@ class Header extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var html = document.querySelector('html');
         if (this.state.lightMode) {
-            html.dataset['theme'] = 'dark';
-        } else {
             html.dataset['theme'] = '';
+        } else {
+            html.dataset['theme'] = 'dark';
         }
     }
 
