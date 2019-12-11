@@ -8,8 +8,14 @@
     display: flex;
     color: inherit;
     justify-content: space-between;
-    height: 400px;
     transition: color 0.3s ease;
+
+    @include for-mobile;
+
+    @media (max-width: $medium-break) {
+        flex-direction: column;
+        height: 150px;
+    }
 
     .country-img {
         background-color: green;
@@ -32,6 +38,11 @@
         padding-right: 30px;
         height: inherit;
 
+        @media (max-width: $medium-break) {
+            flex-direction: column;
+            padding: 25px 0;
+        }
+
         header {
             font-weight: 800;
             font-size: 30px;
@@ -40,8 +51,13 @@
 
         .details {
             columns: 2;
-            height: 50%;
+            height: 45%;
             column-fill: auto;
+
+            @media (max-width: $medium-break) {
+                columns: initial;
+                height: auto;
+            }
 
             .country-detail {
                 margin: 11px auto;
@@ -57,11 +73,21 @@
                 .detail-description {
                     margin-left: 3px;
                 }
+
+                @media (max-width: $medium-break) {
+                    &:nth-of-type(6) {
+                        margin-top: 30px;
+                    }
+                }
             }
         }
 
         .country-tags {
             display: flex;
+
+            @media (max-width: $medium-break) {
+                margin-top: 20px;
+            }
 
             .detail-title {
                 font-weight: 600;

@@ -5,6 +5,13 @@
     color: var(--text-color);
     background: var(--page-bg);
     transition: background 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+
+    @media (max-width: $medium-break) {
+        padding-top: 30px;
+    }
+
+    @include for-mobile;
 
     .go-back {
         @include box-shadow;

@@ -6,6 +6,13 @@
     flex-flow: row wrap;
     background-color: inherit;
 
+    @media (max-width: 760px) {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    @include for-mobile;
+
     .country-item {
         width: 250px;
         margin: 20px 0px;

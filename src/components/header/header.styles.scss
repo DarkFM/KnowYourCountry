@@ -11,22 +11,32 @@
 
     .container {
         @include contain-page;
+        @include for-mobile;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: auto;
 
-        @media (max-width: $max-page-width) {
+        @media (max-width: 400px) {
         }
 
         .title {
             font-size: $header-title;
             margin: 0;
+
+            @media (max-width: 400px) {
+                font-size: 16px;
+            }
         }
 
         .theme-switch {
             font-size: $body-details;
             cursor: pointer;
+
+            @media (max-width: 400px) {
+                font-size: 14px;
+            }
 
             .mode-icon {
                 margin-right: 10px;

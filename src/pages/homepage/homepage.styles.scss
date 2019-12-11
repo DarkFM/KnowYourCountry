@@ -2,16 +2,20 @@
 
 .homepage {
     @include contain-page;
+    @include for-mobile;
     background: var(--page-bg);
     margin: auto;
     margin-top: 50px;
-
-    // transition: background 0.3s ease, color 0.3s ease;
 
     .menu {
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
         background: inherit;
+
+        @media (max-width: $medium-break) {
+            flex-direction: column;
+            height: 150px;
+        }
     }
 }

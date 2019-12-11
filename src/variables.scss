@@ -26,6 +26,8 @@ $menu-item-height: 60px;
 $max-page-width: 1440px;
 $page-padding-sides: 100px;
 
+$medium-break: 800px;
+
 @mixin box-shadow {
     border-radius: 7px;
     box-shadow: 1px 4px 15px -7px rgba(0, 0, 0, 0.25);
@@ -37,4 +39,16 @@ $page-padding-sides: 100px;
     max-width: $max-page-width;
     padding-left: $page-padding-sides;
     padding-right: $page-padding-sides;
+}
+
+@mixin for-mobile {
+    @media (max-width: 420px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
