@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { formatNumberWithCommas } from '../../utils/utils';
+import { formatNumberWithCommas, isEmptyObject } from '../../utils/utils';
 
 import './country-item.styles.scss';
 
@@ -15,9 +15,20 @@ export class CountryItem extends React.Component {
     };
 
     render() {
-        const { id, countryName, population, capital, region, flagImg, history } = this.props;
+        const {
+            id,
+            countryName,
+            population,
+            capital,
+            region,
+            flagImg,
+            history,
+            highlightDetails
+        } = this.props;
         const formattedNumber = formatNumberWithCommas(population);
         const NO_INFO = 'Unknown';
+
+        const { index, length } = highlightDetails || {};
 
         return (
             <div className="country-item" onClick={() => history.push(`/country/${id}`)}>
@@ -26,7 +37,19 @@ export class CountryItem extends React.Component {
                     <img src={flagImg} alt={countryName} />
                 </div>
                 <div className="details">
-                    <header>{countryName}</header>
+                    <header>
+                        {(highlightDetails) ? (
+                            <>
+                                {countryName.substring(0, index)}
+                                <span className="highlight">
+                                    {countryName.substring(index, index + length)}
+                                </span>
+                                {countryName.substring(index + length)}
+                            </>
+                        ) : (
+                            countryName
+                        )}
+                    </header>
                     <p className="country-detail">
                         <span className="detail-title">Population: </span>
                         <span className="detail-description">{formattedNumber || NO_INFO}</span>

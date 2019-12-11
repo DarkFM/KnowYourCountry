@@ -53,7 +53,7 @@ export function addQueryParam(url, key, value) {
     queryString = url.substring(queryStartIndex + 1);
 
     if (!queryString || !queryString.includes('=') || queryStartIndex < 0) {
-        return url.replace('?', '') + '?' + `${key}=${value}`;
+        return url.replace('?', '') + '?' + key + '=' + value;
     }
     // add new key value to object
     const queryMap = queryStrToObj(queryString);

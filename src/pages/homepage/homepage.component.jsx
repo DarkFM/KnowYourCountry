@@ -42,8 +42,9 @@ class HomePage extends React.Component {
         this.state = {
             searchQuery,
             regionQuery,
-            countries: {},
-            allRegions: []
+            // countries: {},
+            allRegions: [],
+            countriesArray: []
         };
     }
 
@@ -52,10 +53,13 @@ class HomePage extends React.Component {
     async componentDidMount() {
         const countries = await getSessionDataAsync(SESSION_KEY);
         const allRegions = ['All', ...getAllRegions(countries).sort()];
+        // convert stored data from object to array of country object
+        const countriesArray = Object.keys(countries).map(countryId => countries[countryId]);
 
         this.setState({
-            countries,
-            allRegions
+            // countries,
+            allRegions,
+            countriesArray
         });
     }
 
@@ -77,6 +81,7 @@ class HomePage extends React.Component {
     };
 
     // acts as a debounce for the onChange input event
+    // this minimizes the number of pages added to the browsers history
     setQueryString = () => {
         let timerId = null;
 
@@ -106,24 +111,39 @@ class HomePage extends React.Component {
     };
 
     filterBySearch = (query, countries) => {
+        const queryLength = query.length;
         const filteredCountries = countries.filter(country => {
             const escapedQuery = escapeRegExp(query);
             const re = new RegExp(escapedQuery, 'gi');
-            return re.test(country.name);
+            const index = country.name.search(re);
+
+            // remove previous search results if any
+            delete country.search;
+
+            if (index < 0) {
+                return false;
+            }
+
+            // adds a new property to the object only if a search query was made
+            if (queryLength > 0) {
+                country.search = {
+                    index: index,
+                    length: queryLength
+                };
+            }
+
+            return true;
         });
 
         return filteredCountries;
     };
 
     render() {
-        const { countries, searchQuery, regionQuery } = this.state;
-
-        // convert stored data from object to array of country object
-        const allCountries = Object.keys(countries).map(countryId => countries[countryId]);
+        const { countriesArray, searchQuery, regionQuery } = this.state;
 
         const filteredCountries = this.filterBySearch(
             searchQuery,
-            this.filterByRegion(regionQuery, allCountries)
+            this.filterByRegion(regionQuery, countriesArray)
         );
 
         return (

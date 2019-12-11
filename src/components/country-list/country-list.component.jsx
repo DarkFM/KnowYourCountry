@@ -5,15 +5,6 @@ import './country-list-styles.scss';
 import CountryItem from '../country-item/country-item.component';
 
 export class CountryList extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isLoading: false,
-            searchQuery: this.props.searchQuery
-        };
-    }
-
     render() {
         return (
             <div className="country-list">
@@ -27,6 +18,7 @@ export class CountryList extends React.Component {
                             capital={country.capital}
                             region={country.region}
                             flagImg={country.flag}
+                            highlightDetails={country.search}
                         />
                     );
                 })}
