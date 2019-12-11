@@ -3,8 +3,10 @@
 @mixin same-styles {
     font-size: $body-details;
     padding: 20px 25px;
-    color: $very-dark-blue2;
-    background-color: $white;
+    color: var(--text-color);
+    background: var(--element-bg);
+
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dropdown {

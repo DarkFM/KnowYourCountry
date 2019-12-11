@@ -2,6 +2,8 @@
 
 .header {
     width: 100%;
+    position: relative;
+    z-index: 1;
 
     padding: 25px 0;
     font-weight: 600;
@@ -13,7 +15,6 @@
         justify-content: space-between;
         align-items: center;
         margin: auto;
-        // min-width: 80%;
 
         @media (max-width: $max-page-width) {
         }
@@ -25,6 +26,18 @@
 
         .theme-switch {
             font-size: $body-details;
+            cursor: pointer;
+
+            .mode-icon {
+                margin-right: 10px;
+            }
+
+            .dark-mode {
+                .fas.fa-sun {
+                    color: inherit;
+                    transition: color 0.3s ease;
+                }
+            }
         }
     }
 }

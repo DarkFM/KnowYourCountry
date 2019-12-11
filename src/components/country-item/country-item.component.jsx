@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { formatNumberWithCommas, isEmptyObject } from '../../utils/utils';
+import { formatNumberWithCommas } from '../../utils/utils';
 
 import './country-item.styles.scss';
 
@@ -38,7 +38,7 @@ export class CountryItem extends React.Component {
                 </div>
                 <div className="details">
                     <header>
-                        {(highlightDetails) ? (
+                        {highlightDetails ? (
                             <>
                                 {countryName.substring(0, index)}
                                 <span className="highlight">

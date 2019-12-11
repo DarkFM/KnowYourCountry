@@ -42,7 +42,6 @@ class HomePage extends React.Component {
         this.state = {
             searchQuery,
             regionQuery,
-            // countries: {},
             allRegions: [],
             countriesArray: []
         };
@@ -57,7 +56,6 @@ class HomePage extends React.Component {
         const countriesArray = Object.keys(countries).map(countryId => countries[countryId]);
 
         this.setState({
-            // countries,
             allRegions,
             countriesArray
         });

@@ -1,18 +1,20 @@
 @import '../../variables.scss';
 
 .search-bar {
-    $color: rgba(0, 0, 0, 0.5);
+    $color: var(--input-color);
+    background: var(--element-bg);
     @include box-shadow;
     height: $menu-item-height;
     display: inline-flex;
     align-items: center;
     position: relative;
     min-width: 400px;
-    color: $very-light-gray;
     overflow: hidden;
 
+    transition: background 0.3s ease, color 0.3s ease;
+
     i.fas {
-        color: $color;
+        color: var(--input-color);
         position: absolute;
         height: inherit;
         width: 12%;
@@ -20,6 +22,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        transition: color 0.3s ease;
     }
 
     input[type='search'] {
@@ -30,9 +34,12 @@
         height: 100%;
         transition: outline 0.3s ease;
         outline: rgba(0, 0, 0, 0) solid 2px;
+        background-color: inherit;
+        color: inherit;
 
         &::placeholder {
-            color: $color;
+            color: inherit;
+            transition: color 0.3s ease;
         }
 
         &:active,

@@ -2,13 +2,16 @@
 
 .homepage {
     @include contain-page;
+    background: var(--page-bg);
     margin: auto;
     margin-top: 50px;
-    // padding: 0 $page-padding-sides;
+
+    // transition: background 0.3s ease, color 0.3s ease;
 
     .menu {
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
+        background: inherit;
     }
 }

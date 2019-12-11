@@ -6,8 +6,10 @@
 
 .country-details {
     display: flex;
+    color: inherit;
     justify-content: space-between;
     height: 400px;
+    transition: color 0.3s ease;
 
     .country-img {
         background-color: green;
@@ -81,6 +83,8 @@
                     margin-bottom: 5px;
                     min-width: 100px;
                     @include box-shadow;
+                    background: var(--element-bg);
+                    transition: background 0.3s ease, color 0.3s ease;
                 }
             }
         }

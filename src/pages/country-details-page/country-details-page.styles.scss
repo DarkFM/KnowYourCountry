@@ -2,9 +2,14 @@
 
 .country-detail-page {
     padding: 80px $page-padding-sides;
+    color: var(--text-color);
+    background: var(--page-bg);
+    transition: background 0.3s ease, color 0.3s ease;
 
     .go-back {
         @include box-shadow;
+        background: var(--element-bg);
+        color: inherit;
         cursor: pointer;
         display: inline-block;
         padding: 10px 40px;
@@ -13,7 +18,8 @@
         min-width: 100px;
         font-weight: 300;
         font-size: $body-details;
-        background-color: $very-light-gray;
+
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
     .country-details {
