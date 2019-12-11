@@ -2,7 +2,7 @@
   "name": "rest-countries",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://DarkFM.github.io/KnowYourCountry/",
+  "homepage": "http://DarkFM.github.io/KnowYourCountry/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
