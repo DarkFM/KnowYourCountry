@@ -3,7 +3,7 @@
 .homepage {
     @include contain-page;
     @include for-mobile;
-    background: var(--page-bg);
+    background: inherit;
     margin: auto;
     margin-top: 50px;
 

@@ -1,11 +1,11 @@
 export const SESSION_KEY = 'countries-list';
 
 export function persistToSession(data, key) {
-    window.localStorage.setItem(key, JSON.stringify(data));
+    window.sessionStorage.setItem(key, JSON.stringify(data));
 }
 
 export async function getSessionDataAsync(key) {
-    let countries = JSON.parse(window.localStorage.getItem(key));
+    let countries = JSON.parse(window.sessionStorage.getItem(key));
     if (!countries) {
         countries = await getCountries();
         persistToSession(countries, key);
@@ -14,7 +14,6 @@ export async function getSessionDataAsync(key) {
 }
 
 export async function getCountries() {
-    console.info('making a request to restcountries.eu');
     const request = new Request('https://restcountries.eu/rest/v2/all');
     const response = await window.fetch(request);
     let data = await response.json();

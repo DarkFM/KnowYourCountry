@@ -52,3 +52,7 @@ $medium-break: 800px;
         padding-right: 20px;
     }
 }
+
+@mixin themeTransition {
+    transition: background 1.3s ease-out, color 0.3s ease-out;
+}

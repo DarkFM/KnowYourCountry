@@ -11,7 +11,7 @@
     min-width: 400px;
     overflow: hidden;
 
-    transition: background 0.3s ease, color 0.3s ease;
+    @include themeTransition;
 
     @media (max-width: 500px) {
         min-width: 100px;

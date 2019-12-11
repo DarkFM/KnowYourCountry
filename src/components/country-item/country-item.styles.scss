@@ -6,7 +6,7 @@
     color: var(--text-color);
     cursor: pointer;
 
-    transition: background 0.2s 0.1s ease, color 0.3s ease;
+    @include themeTransition;
 
     min-width: 270px;
     height: 400px;

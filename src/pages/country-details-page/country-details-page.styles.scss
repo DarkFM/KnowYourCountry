@@ -4,7 +4,7 @@
     padding: 80px $page-padding-sides;
     color: var(--text-color);
     background: var(--page-bg);
-    transition: background 0.3s ease, color 0.3s ease;
+    @include themeTransition;
     min-height: 100vh;
 
     @media (max-width: $medium-break) {
@@ -26,7 +26,7 @@
         font-weight: 300;
         font-size: $body-details;
 
-        transition: background 0.3s ease, color 0.3s ease;
+        @include themeTransition;
     }
 
     .country-details {
