@@ -3,10 +3,14 @@ import React from 'react';
 import './dropdown.styles.scss';
 
 class Dropdown extends React.Component {
-    state = {
-        showItems: false,
-        selectedItem: null
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showItems: false,
+            selectedItem: this.props.initData
+        };
+    }
 
     toggleDropdown = () => {
         this.setState(state => ({ showItems: !state.showItems }));

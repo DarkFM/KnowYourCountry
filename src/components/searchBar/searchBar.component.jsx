@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
         super(props);
 
         this.state = {
-            query: this.props.initQuery || ''
+            query: this.props.initData || ''
         };
     }
     static defaultProps = {
@@ -18,8 +18,13 @@ class SearchBar extends React.Component {
         this.setState({ [name]: value });
     };
 
+    componentDidMount() {
+        this.setState({ query: this.props.initData });
+    }
+
     componentDidUpdate(prevProps, prevState) {
         const query = this.state.query;
+
         if (prevState.query !== query) {
             this.props.filterCountries(this.state.query.trim());
         }

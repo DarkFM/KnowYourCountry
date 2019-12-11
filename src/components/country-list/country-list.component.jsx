@@ -4,8 +4,6 @@ import './country-list-styles.scss';
 
 import CountryItem from '../country-item/country-item.component';
 
-import { getSessionDataAsync, SESSION_KEY, escapeRegExp } from '../../utils/utils';
-
 export class CountryList extends React.Component {
     constructor(props) {
         super(props);
