@@ -4,7 +4,8 @@ import './header.styles.scss';
 
 class Header extends React.Component {
     state = {
-        lightMode: true
+        lightMode: new Date().getHours() < 20,
+        firstTime: true,
     };
 
     toggleTheme = () => {
@@ -21,6 +22,10 @@ class Header extends React.Component {
     }
 
     render() {
+        if (this.state.firstTime) {
+            this.componentDidUpdate()
+        }
+        
         return (
             <header className="header">
                 <div className="container">

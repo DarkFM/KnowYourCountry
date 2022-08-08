@@ -33,7 +33,14 @@
         .theme-switch {
             font-size: $body-details;
             cursor: pointer;
+            user-select: none;
+            position: relative;
+            transition: all .15s ease-in;
 
+            &:active {
+                top: 1.5px;
+            }
+            
             @media (max-width: 400px) {
                 font-size: 14px;
             }
