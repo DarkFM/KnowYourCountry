@@ -35,9 +35,9 @@ class CountryDetailsPage extends React.Component {
     async updateState(countryId) {
         const countries = await getSessionDataAsync(SESSION_KEY);
         const country = countries[countryId];
-        const borders = country.borders.map(countryCode => {
+        const borders = country.borders?.map(countryCode => {
             return { name: countries[countryCode].name, code: countryCode };
-        });
+        }) ?? []
         this.setState(state => ({
             country,
             borders,

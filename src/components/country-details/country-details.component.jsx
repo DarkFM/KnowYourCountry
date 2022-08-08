@@ -13,7 +13,7 @@ class CountryDetail extends React.Component {
             population,
             region,
             subregion,
-            capital,
+            capital="None",
             topLevelDomain,
             currencies: _currencies,
             languages: _languages
@@ -21,8 +21,8 @@ class CountryDetail extends React.Component {
         const { borders: _borders } = this.props;
 
         const borders = _borders.length > 0 ? _borders : [{ name: 'None', code: this.props.countryId }];
-        const currencies = _currencies.map(curr => curr.name);
-        const languages = _languages.map(lang => lang.name);
+        const currencies = _currencies?.map(curr => curr.name) ?? ["None"];
+        const languages = _languages?.map(lang => lang.name) ?? ["None"];
 
         return (
             <div className="country-details">
