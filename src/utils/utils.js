@@ -14,7 +14,7 @@ export async function getSessionDataAsync(key) {
 }
 
 export async function getCountries() {
-    const request = new Request('https://restcountries.eu/rest/v2/all');
+    const request = new Request('https://restcountries.com/v2/all');
     const response = await window.fetch(request);
     let data = await response.json();
     return data.reduce((map, countryData) => {
