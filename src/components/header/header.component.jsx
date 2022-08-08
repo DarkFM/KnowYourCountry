@@ -24,8 +24,9 @@ class Header extends React.Component {
     render() {
         if (this.state.firstTime) {
             this.componentDidUpdate()
+            this.state.firstTime = false
         }
-        
+
         return (
             <header className="header">
                 <div className="container">
